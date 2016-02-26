@@ -1,13 +1,12 @@
 /* @flow */
 import React from 'react'
 import {IconButton} from 'material-ui'
-import {ListItem, Avatar} from 'material-ui'
+import {ListItem, Avatar, Divider} from 'material-ui'
 let Style = {
   position : 'absolute',
   right : 0
 }
 const Counter = ({title, count, incr, decr}: {title: string, count: number, incr: Function, decr: Function}) => {
-
 
   let onIncrement = () => {
     incr(title)
@@ -16,6 +15,7 @@ const Counter = ({title, count, incr, decr}: {title: string, count: number, incr
     decr(title)
   }
   return (
+    <div>
     <ListItem
     disabled={true}
     leftAvatar={<Avatar>{title.charAt(0)}</Avatar>}
@@ -30,6 +30,8 @@ const Counter = ({title, count, incr, decr}: {title: string, count: number, incr
     <IconButton onMouseUp={onDecrement} iconClassName='fa fa-caret-down' />
     </div>
     </ListItem>
+    <Divider/>
+    </div>
   )
 }
 
